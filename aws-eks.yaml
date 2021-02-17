@@ -1,0 +1,16 @@
+# codeveros chart values overrides for AWS EKS deploy
+
+proxy:
+  enabled: false
+
+codeveros-ui:
+  ingress:
+    enabled: true
+    annotations:
+      alb.ingress.kubernetes.io/group.name: coverosdev
+
+codeveros-gateway:
+  ingress:
+    enabled: true
+    annotations:
+      alb.ingress.kubernetes.io/group.name: coverosdev

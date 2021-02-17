@@ -8,6 +8,7 @@ codeveros-ui:
     type: NodePort
   ingress:
     enabled: true
+    path: "/*"
     annotations:
       kubernetes.io/ingress.class: alb
       alb.ingress.kubernetes.io/group.name: coverosdev
@@ -18,6 +19,7 @@ codeveros-gateway:
     type: NodePort
   ingress:
     enabled: true
+    path: "/api/*"
     annotations:
       kubernetes.io/ingress.class: alb
       alb.ingress.kubernetes.io/group.name: coverosdev

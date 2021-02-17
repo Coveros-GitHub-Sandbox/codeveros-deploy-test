@@ -12,6 +12,7 @@ codeveros-ui:
       kubernetes.io/ingress.class: alb
       alb.ingress.kubernetes.io/group.name: coverosdev
       alb.ingress.kubernetes.io/healthcheck-path: /health-check
+      alb.ingress.kubernetes.io/scheme: internet-facing
 codeveros-gateway:
   service:
     type: NodePort
@@ -21,3 +22,4 @@ codeveros-gateway:
       kubernetes.io/ingress.class: alb
       alb.ingress.kubernetes.io/group.name: coverosdev
       alb.ingress.kubernetes.io/healthcheck-path: /health-check
+      alb.ingress.kubernetes.io/scheme: internet-facing

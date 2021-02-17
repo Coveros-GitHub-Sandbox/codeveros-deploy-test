@@ -7,10 +7,12 @@ codeveros-ui:
   ingress:
     enabled: true
     annotations:
+      kubernetes.io/ingress.class: alb
       alb.ingress.kubernetes.io/group.name: coverosdev
 
 codeveros-gateway:
   ingress:
     enabled: true
     annotations:
+      kubernetes.io/ingress.class: alb
       alb.ingress.kubernetes.io/group.name: coverosdev

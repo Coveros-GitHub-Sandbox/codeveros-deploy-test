@@ -4,6 +4,8 @@ proxy:
   enabled: false
 
 codeveros-ui:
+  service:
+    type: NodePort
   ingress:
     enabled: true
     annotations:
@@ -11,6 +13,8 @@ codeveros-ui:
       alb.ingress.kubernetes.io/group.name: coverosdev
 
 codeveros-gateway:
+  service:
+    type: NodePort
   ingress:
     enabled: true
     annotations:

@@ -11,7 +11,7 @@ codeveros-ui:
     annotations:
       kubernetes.io/ingress.class: alb
       alb.ingress.kubernetes.io/group.name: coverosdev
-
+      alb.ingress.kubernetes.io/healthcheck-path: /health-check
 codeveros-gateway:
   service:
     type: NodePort
@@ -20,3 +20,4 @@ codeveros-gateway:
     annotations:
       kubernetes.io/ingress.class: alb
       alb.ingress.kubernetes.io/group.name: coverosdev
+      alb.ingress.kubernetes.io/healthcheck-path: /health-check

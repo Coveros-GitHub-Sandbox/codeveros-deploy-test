@@ -16,11 +16,12 @@ iam:
         namespace: kube-system
       wellKnownPolicies:
         awsLoadBalancerController: true
-    - metadata:
-        name: cert-manager
-        namespace: cert-manager
-      wellKnownPolicies:
-        certManager: true
+    # Using Amazon Certificate Manager, not cert-manager
+    #- metadata:
+    #    name: cert-manager
+    #    namespace: cert-manager
+    #  wellKnownPolicies:
+    #    certManager: true
 addons:
   - name: vpc-cni
     attachPolicyARNs:

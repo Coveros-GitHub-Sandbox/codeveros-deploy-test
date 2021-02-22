@@ -1,11 +1,13 @@
-# codeveros chart values overrides for AWS EKS deploy
+# Codeveros chart values overrides for AWS EKS deploy
+# Deploys Codeveros in EKS cluster using the AWS Load Balancer Controller Ingress Controller 
+# and TLS with a certificate retrieved from Amazon Certificate Manager
 
 proxy:
   enabled: false
 
 codeveros-ui:
   service:
-    type: NodePort
+    type: NodePort # Must be NodePort for the ALB to be able to access the Service
   ingress:
     enabled: true
     host: codeveros.k8s.dev.secureci.com
@@ -16,7 +18,7 @@ codeveros-ui:
       alb.ingress.kubernetes.io/group.name: coverosdev
       alb.ingress.kubernetes.io/healthcheck-path: /health-check
       alb.ingress.kubernetes.io/scheme: internet-facing
-      alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}]'
+      alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}]' # Enables SSL, retrieving a ACM certificate based on the host
 codeveros-gateway:
   service:
     type: NodePort

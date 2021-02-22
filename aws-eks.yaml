@@ -8,6 +8,7 @@ codeveros-ui:
     type: NodePort
   ingress:
     enabled: true
+    host: codeveros.k8s.dev.secureci.com
     path: "/*"
     tlsSecretName: codeveros
     annotations:
@@ -21,6 +22,7 @@ codeveros-gateway:
     type: NodePort
   ingress:
     enabled: true
+    host: codeveros.k8s.dev.secureci.com
     path: "/api/*"
     tlsSecretName: codeveros
     annotations:

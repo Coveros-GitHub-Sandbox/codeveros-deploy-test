@@ -1,0 +1,4 @@
+clusterName: cluster-test
+serviceAccount:
+  create: false
+  name: aws-load-balancer-controller

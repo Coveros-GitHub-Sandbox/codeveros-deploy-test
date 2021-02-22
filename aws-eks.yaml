@@ -16,7 +16,7 @@ codeveros-ui:
       alb.ingress.kubernetes.io/group.name: coverosdev
       alb.ingress.kubernetes.io/healthcheck-path: /health-check
       alb.ingress.kubernetes.io/scheme: internet-facing
-      cert-manager.io/cluster-issuer: letsencrypt-staging
+      alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}]'
 codeveros-gateway:
   service:
     type: NodePort
@@ -30,4 +30,4 @@ codeveros-gateway:
       alb.ingress.kubernetes.io/group.name: coverosdev
       alb.ingress.kubernetes.io/healthcheck-path: /health-check
       alb.ingress.kubernetes.io/scheme: internet-facing
-      cert-manager.io/cluster-issuer: letsencrypt-staging
+      alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}]'

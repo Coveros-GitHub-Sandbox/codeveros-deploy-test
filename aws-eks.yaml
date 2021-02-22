@@ -9,19 +9,23 @@ codeveros-ui:
   ingress:
     enabled: true
     path: "/*"
+    tlsSecretName: codeveros
     annotations:
       kubernetes.io/ingress.class: alb
       alb.ingress.kubernetes.io/group.name: coverosdev
       alb.ingress.kubernetes.io/healthcheck-path: /health-check
       alb.ingress.kubernetes.io/scheme: internet-facing
+      cert-manager.io/cluster-issuer: letsencrypt-staging
 codeveros-gateway:
   service:
     type: NodePort
   ingress:
     enabled: true
     path: "/api/*"
+    tlsSecretName: codeveros
     annotations:
       kubernetes.io/ingress.class: alb
       alb.ingress.kubernetes.io/group.name: coverosdev
       alb.ingress.kubernetes.io/healthcheck-path: /health-check
       alb.ingress.kubernetes.io/scheme: internet-facing
+      cert-manager.io/cluster-issuer: letsencrypt-staging
